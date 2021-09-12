@@ -28,7 +28,6 @@ BaselineOfExercism >> baseline: spec [
 			self setUpDependencies: spec.
 			self setUpExercisesFor: spec.
 			spec
-				package: 'ExercismPharo70'; "Pharo override/patch methods"
 				package: 'ExercismTools' 
 					with: [ spec requires: #('ExercismPharo70') ];
 				
