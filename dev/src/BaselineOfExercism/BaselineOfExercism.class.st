@@ -47,7 +47,6 @@ BaselineOfExercism >> baseline: spec [
 				package: 'ExercismDev'
 					with: [ spec requires: #(
 						'OSProcess' "For shelling out to configlet"
-						'Ring2' "For mentoring support of shadow browsing"
 						'ExercismTools' ),  
 						self class exercisePackageNames ];
 			
@@ -100,10 +99,6 @@ BaselineOfExercism >> setUpDependencies: spec [
 	spec
     	baseline: 'Mocketry'
     	with: [ spec repository: 'github://pharo-exercism/Mocketry:v4.0.x' ].
-	
-	spec
-    	baseline: 'Ring2'
-    	with: [ spec repository: 'github://pavel-krivanek/Ring2'; loads: #(calypso)].
 ]
 
 { #category : #baselines }
