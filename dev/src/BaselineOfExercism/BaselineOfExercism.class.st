@@ -87,7 +87,7 @@ BaselineOfExercism >> setUpDependencies: spec [
 				
 	spec
     	baseline: 'Mocketry'
-    	with: [ spec repository: 'github://dionisiydk/Mocketry:v4.0.x' ].
+    	with: [ spec repository: 'github://dionisiydk/Mocketry:v6.0.3' ].
 ]
 
 { #category : #baselines }
