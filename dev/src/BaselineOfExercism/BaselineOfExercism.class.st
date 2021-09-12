@@ -46,7 +46,6 @@ BaselineOfExercism >> baseline: spec [
 					
 				package: 'ExercismDev'
 					with: [ spec requires: #(
-						'OSProcess' "For shelling out to configlet"
 						'ExercismTools' ),  
 						self class exercisePackageNames ];
 			
@@ -87,14 +86,6 @@ BaselineOfExercism >> setExercismLogo [
 
 { #category : #baselines }
 BaselineOfExercism >> setUpDependencies: spec [
-
-	spec 
-		configuration: 'OSProcess' 
-			with: [
-				spec
-					className: #ConfigurationOfOSProcess;
-					versionString: #'stable';
-					repository: 'http://www.squeaksource.com/OSProcess' ].
 				
 	spec
     	baseline: 'Mocketry'
