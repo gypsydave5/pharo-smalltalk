@@ -145,11 +145,11 @@ ExercismGenerator >> generate [
 	ExercismConfigGenerator generateTo: basePathReference.
 	
 	cmd := 'configlet generate ', (basePathReference pathString surroundedBySingleQuotes).		
-	result := self osProcess waitForCommand: cmd.
-	
-	result succeeded
-		ifFalse: [ 
-			self error: 'failure running "configlet generate" - ' , result outputAndError printString ]
+	result := (self osProcess command: cmd) runAndWaitOnExitDo: [ :process :outString :errString |
+		process isSuccess 
+			ifFalse: [ self error: 'failure running "configlet generate" - ' , errString ]
+		
+		 ].
 ]
 
 { #category : #helper }
@@ -240,7 +240,7 @@ ExercismGenerator >> osProcess [
 	^ osProcess 
 		ifNotNil: [ osProcess ] 
 		ifNil: [ 
-			osProcess := PipeableOSProcess.
+			osProcess := OSSUnixSubprocess.
 			osProcess  
 			 ] 
 ]

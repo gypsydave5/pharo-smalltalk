@@ -261,16 +261,15 @@ ExercismHttpClient >> signalUnauthorized [
 
 { #category : #internal }
 ExercismHttpClient >> solutionPathFor: aString [
+
 	"Answer a path string that accounts for missing or extra / path characters"
-	
-	^ String
-		streamContents: [ :s | 
-			s
-				nextPutAll: self class solutionPath exPathString;
-				nextPutAll:
-					(aString first = Path delimeter
-						ifTrue: [ aString allButFirst ]
-						ifFalse: [ aString ]) ]
+
+	^ String streamContents: [ :s | 
+		  s
+			  nextPutAll: self class solutionPath exPathString;
+			  nextPutAll: (aString first = Path delimiter
+					   ifTrue: [ aString allButFirst ]
+					   ifFalse: [ aString ]) ]
 ]
 
 { #category : #internal }
